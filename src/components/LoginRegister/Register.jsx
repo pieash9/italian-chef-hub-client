@@ -1,27 +1,38 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
-
-  const {createUser} = useContext(AuthContext)
+  const { createUser, updateUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleRegister = (e) => {
+    setError("");
     e.preventDefault();
 
-    const form = e.target 
-    const name = form.name.value
-    const email = form.email.value
-    const password = form.password.value
-    const imgUrl = form.imgUrl.value
-    console.log(name,email,password,imgUrl)
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const imgUrl = form.imgUrl.value;
+    console.log(name, email, password, imgUrl);
 
-    createUser(email,password)
-    .then(result=>{
-      console.log(result.user)
-    })
-    .catch(err=>console.log(err))
+    if (!/^.{6,}$/.test(password)) {
+      setError("Password must be more than 6 characters");
+      return;
+    } else {
+      createUser(email, password)
+        .then((result) => {
+          updateUser(name, imgUrl)
+            .then(() => console.log("success"))
+            .catch((err) => console.log(err));
+          console.log(result.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
   return (
     <div className="my-16">
@@ -54,6 +65,7 @@ const Register = () => {
             placeholder="Enter Password"
             required
           />
+          {error && <p className="text-yellow-500 my-0">{error}</p>}
           <br />
           <input
             className="input-form mb-5"
@@ -78,30 +90,12 @@ const Register = () => {
           </button>
           <p className="mb-3 text-gray-600">
             Already have an account?{" "}
-            <Link to="/login" className="link-hover ">
+            <Link to="/login" className="link-hover text-red-400">
               Login
             </Link>
           </p>
         </form>
-        <h5 className="text-2xl font-medium text-gray-500 text-center mb-3">
-          Or
-        </h5>
-        <div className="flex items-center justify-between">
-          <button>
-            <img
-              className="h-10"
-              src="https://i.ibb.co/r2N8zZm/image.png"
-              alt=""
-            />
-          </button>
-          <button>
-            <img
-              className="h-12"
-              src="https://i.ibb.co/JKVFVCn/image.png"
-              alt=""
-            />
-          </button>
-        </div>
+        
       </div>
     </div>
   );
