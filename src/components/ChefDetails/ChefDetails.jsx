@@ -2,16 +2,25 @@
 import React from "react";
 import { FcLike } from "react-icons/fc";
 import { useLoaderData } from "react-router-dom";
+import ChefDetailsCard from "./ChefDetailsCard";
 
 const ChefDetails = () => {
   const chefData = useLoaderData();
-  const { name, picture, description, likes, recipesNo, experience } = chefData;
+  const {
+    name,
+    picture,
+    description,
+    likes,
+    recipesNo,
+    experience,
+    recipesDetails,
+  } = chefData;
   return (
     <div className="my-container my-10">
-      <h3 className="text-3xl font-Kaushan text-center text-red-500 mb-20">
+      <h3 className="text-3xl font-Kaushan text-center text-red-500 mb-10">
         About Chef
       </h3>
-      <div className="flex gap-10">
+      <div className="flex gap-10 ">
         <div className="md:w-3/12">
           <img className="w-full" src={picture} alt="" />
           <h3 className="text-3xl mb-3 mt-5 text-center text-gray-600 font-medium">
@@ -55,14 +64,21 @@ const ChefDetails = () => {
               </div>
             </div>
           </div>
-
-          {/* Recipes details card  */}
-
-          
-          <div>
-
-          </div>
         </div>
+      </div>
+
+      {/* Recipes details card  */}
+
+      <div>
+      <h5 className="text-xl mb-3 mt-16 text-gray-800 font-medium">
+            Recipe Details
+          </h5>
+          
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+            {recipesDetails?.map((singleRecipe, id) => (
+              <ChefDetailsCard key={id} singleRecipe={singleRecipe} />
+            ))}
+          </div>
       </div>
     </div>
   );
