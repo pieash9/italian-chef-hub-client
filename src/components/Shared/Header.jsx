@@ -12,7 +12,8 @@ const Header = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="flex justify-between items-center pt-5 my-container">
+    
+    <div className="flex justify-between items-center py-4 md:px-20 sticky top-0 bg-slate-50 z-10">
       <h3 className="text-2xl font-medium text-gray-600">Italian Chef Hub</h3>
       <div className="flex justify-center items-center gap-7">
         <NavLink

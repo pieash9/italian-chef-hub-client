@@ -70,7 +70,7 @@ const ChefDetails = () => {
       {/* Recipes details card  */}
 
       <div>
-      <h5 className="text-xl mb-3 mt-16 text-gray-800 font-medium">
+      <h5 className="text-2xl mb-3 mt-16 text-gray-800 font-medium">
             Recipe Details
           </h5>
           

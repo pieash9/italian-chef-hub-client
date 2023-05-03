@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
         <div className="w-full lg:w-1/3 px-4 mb-4">
           <h2 className="text-xl font-medium mb-4">Subscribe</h2>
-          <form>
+          <div>
             <div className="flex items-center mb-4">
               <input
                 type="email"
@@ -51,7 +51,7 @@ const Footer = () => {
                 Subscribe
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
       <p className="text-center ">
