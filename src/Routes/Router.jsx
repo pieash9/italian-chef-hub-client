@@ -6,6 +6,7 @@ import Register from "../components/LoginRegister/Register";
 import ChefLayout from "../layouts/ChefLayout";
 import Home from "../components/Home/Home";
 import Blog from "../components/Blog/Blog";
+import ChefDetails from "../components/ChefDetails/ChefDetails";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
     element: <ChefLayout />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "chefDetails/:id",
+        element: <ChefDetails />,
+        loader: ({params})=> fetch(`http://localhost:5000/allData/${params.id}`) 
+      },
       {
         path: "blog",
         element: <Blog />,
