@@ -5,21 +5,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 *{
     font-family: 'Roboto', sans-serif;
 }
 
 .button-primary{
-    @apply bg-red-500 py-1 px-5 hover:text-white rounded hover:bg-red-600 transition
+    @apply bg-red-500 py-1 px-5 text-white rounded hover:bg-red-600 transition
 }
 .button-secondary{
-    @apply bg-gray-400 py-1 px-5 hover:text-white rounded hover:bg-gray-500 transition
+    @apply bg-gray-600 py-1 px-5 text-white rounded hover:bg-gray-500 transition
 }
 .my-container{
-    @apply px-5 md:px-10 max-w-[1240px] mx-auto
+    @apply px-5 md:px-10 max-w-[1300px] mx-auto
 }
 
 .active{
