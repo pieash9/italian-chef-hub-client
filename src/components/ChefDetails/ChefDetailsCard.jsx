@@ -53,7 +53,7 @@ const ChefDetailsCard = ({ singleRecipe }) => {
             Add to <FaRegHeart className="ml-2" />
           </button>
         </div>
-        <Toaster position="bottom-center" reverseOrder={false} />
+        <Toaster position="top-center" reverseOrder={false} />
       </div>
     </div>
   );

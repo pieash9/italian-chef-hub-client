@@ -1,48 +1,66 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
-  const {googleLogin,githubLogin,loginWithEmail} =useContext(AuthContext)
-  const [error,setError] = useState('')
+  const { googleLogin, githubLogin, loginWithEmail } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
-  const googleProvider = new GoogleAuthProvider()
-  const githubProvider = new GithubAuthProvider()
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // console.log(location)
 
-  const handleSignIn =(e)=>{
+  const from = location.state?.from?.pathname || "/";
+
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+  const handleSignIn = (e) => {
     e.preventDefault();
-    setError('')
-    const form = e.target
-    const email=form.email.value
-    const password=form.password.value
+    setError("");
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
-    loginWithEmail(email,password)
-    .then(result=>{
-      console.log(result)
-    })
-    .catch(err=>{
-      setError("Your password or email did not match")
-      console.log(err)})
-    
-  }
+    loginWithEmail(email, password)
+      .then((result) => {
+        navigate(from, { replace: true });
+        toast.success("Login Successfully !");
+      })
+      .catch((err) => {
+        setError("Your password or email did not match");
+        toast.error("Can't login")
+        console.log(err);
+      });
+  };
 
-  const handleGoogleLogin =()=>{
+  const handleGoogleLogin = () => {
     googleLogin(googleProvider)
-    .then(result=>{
-      console.log(result.user)
-    })
-    .catch(err=>console.log(err))
-  }
+      .then((result) => {
+        toast.success("Login Successfully !");
+        navigate(from, { replace: true });
+        console.log(result.user);
+      })
+      .catch((err) => {
+        toast.error("Can't login")
+        console.log(err)});
+  };
 
-  const handleGithubLogin =()=>{
+  const handleGithubLogin = () => {
     githubLogin(githubProvider)
-    .then(result=>{
-      console.log(result.user)
-    })
-    .catch(err=>console.log(err))
-  }
+      .then((result) => {
+        toast.success("Login Successfully !");
+        navigate(from, { replace: true });
+        console.log(result.user);
+      })
+      .catch((err) => {
+        toast.error("Can't login")
+        console.log(err)});
+  };
 
   return (
     <div className="my-16">
@@ -71,11 +89,18 @@ const Login = () => {
           <button className="button-primary text-white w-full !py-3 my-5">
             Login
           </button>
-          
-          <p className="mb-3 text-gray-600">New to the Italian Chef Hub? <Link to='/register' className="link-hover text-red-400">Register</Link></p>
+
+          <p className="mb-3 text-gray-600">
+            New to the Italian Chef Hub?{" "}
+            <Link to="/register" className="link-hover text-red-400">
+              Register
+            </Link>
+          </p>
         </form>
         {error && <p className="text-warning mb-2">{error}</p>}
-          <h5 className="text-2xl font-medium text-gray-600 text-center mb-3">Or</h5>
+        <h5 className="text-2xl font-medium text-gray-600 text-center mb-3">
+          Or
+        </h5>
         <div className="flex items-center justify-between">
           <button onClick={handleGithubLogin}>
             <img
@@ -92,7 +117,7 @@ const Login = () => {
             />
           </button>
         </div>
-        
+        <Toaster position="top-center" reverseOrder={false} />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
@@ -25,11 +26,14 @@ const Register = () => {
       createUser(email, password)
         .then((result) => {
           updateUser(name, imgUrl)
-            .then(() => console.log("success"))
+            .then(() => {
+              toast.success("Registration Successful !");
+              console.log("success")})
             .catch((err) => console.log(err));
           console.log(result.user);
         })
         .catch((err) => {
+          toast.error("Registration Failed! Please Provide valid email and password!!")
           console.log(err);
         });
     }
@@ -95,7 +99,7 @@ const Register = () => {
             </Link>
           </p>
         </form>
-        
+        <Toaster position="top-center" reverseOrder={false} />
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import ChefLayout from "../layouts/ChefLayout";
 import Home from "../components/Home/Home";
 import Blog from "../components/Blog/Blog";
 import ChefDetails from "../components/ChefDetails/ChefDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +36,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "chefDetails/:id",
-        element: <ChefDetails />,
-        loader: ({params})=> fetch(`http://localhost:5000/allData/${params.id}`) 
+        element: (
+          <PrivateRoute>
+            <ChefDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allData/${params.id}`),
       },
       {
         path: "blog",
