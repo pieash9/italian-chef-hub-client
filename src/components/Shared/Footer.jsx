@@ -1,10 +1,12 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-10 bottom-0 left-0 w-full">
       <div className="my-container mx-auto flex flex-wrap">
+        <div className="md:w-2/3 w-full  mb-4 flex justify-between">
         <div className="w-full lg:w-1/3  mb-4">
           <h2 className="text-xl  mb-4">Contact Info</h2>
           <p>1234 Main St.</p>
@@ -27,16 +29,18 @@ const Footer = () => {
           <h2 className="text-xl  mb-4">Useful Links</h2>
           <ul>
             <li className="pb-2">
-              <a href="#">Home</a>
+              <Link className="hover:text-red-500" to='/'>Home</Link>
             </li>
 
             <li className="pb-2">
-              <a href="#">Blog</a>
+            <Link className="hover:text-red-500" to='/blog'>Blog</Link>
+              
             </li>
             <li className="pb-2">
-              <a href="#">Contact Us</a>
+              <Link className="hover:text-red-500" to="">Contact Us</Link>
             </li>
           </ul>
+        </div>
         </div>
         <div className="w-full lg:w-1/3 px-4 mb-4">
           <h2 className="text-xl font-medium mb-4">Subscribe</h2>
@@ -55,7 +59,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-center ">
-        Copyright <span className="text-red-400">@cloud_pieash</span>
+        Copyright <Link to='https://github.com/pieash9' className="text-red-400">@cloud_pieash</Link>
       </p>
     </footer>
   );

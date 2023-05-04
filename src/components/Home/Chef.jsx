@@ -1,14 +1,24 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ChefCard from "./ChefCard";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Chef = () => {
   const [chefsData, setChefsData] = useState([]);
+  const [loading,setLoading] = useState(true)
+  
+  
   useEffect(() => {
+    setLoading(true)
     fetch("https://italian-chef-hub-server-pieash9.vercel.app/allData")
       .then((res) => res.json())
       .then((data) => setChefsData(data));
+      setLoading(false)
   }, []);
+
+  if (loading) {
+    return <progress className="progress w-full mt-20"></progress>;
+  }
   return (
     <div className="mt-36 my-container">
       <div className="mb-10">

@@ -12,9 +12,9 @@ const Header = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="flex justify-between items-center py-4 md:px-20 sticky top-0 bg-slate-50 z-10">
-      <h3 className="text-2xl font-medium text-gray-600">Italian Chef Hub</h3>
-      <div className="flex justify-center items-center gap-7">
+    <div className="md:flex justify-between items-center py-4 md:px-20 sticky top-0 bg-slate-50 z-10">
+      <h3 className="text-2xl md:text-left text-center font-medium text-gray-600">Italian Chef Hub</h3>
+      <div className="flex justify-center items-center gap-7 md:mt-0 mt-3">
         <NavLink
           className={({ isActive }) =>
             isActive ? "active" : "hover:text-red-500"

@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <div>
       <div className="mt-36 my-container md:flex items-center ">
-        <div className="mb-10 w-6/12">
+        <div className="mb-10 md:w-6/12 px-2">
           <h3 className="text-2xl font-Kaushan  text-red-500 mb-3">About Us</h3>
           <h3 className="text-4xl  font-bold text-gray-600 mb-4">
             Our Journey History
@@ -24,7 +24,7 @@ const AboutUs = () => {
             Read More
           </button>
         </div>
-        <div className="relative">
+        <div className="relative my-36 md:my-0">
           <div className="md:ml-36">
             <LazyLoadImage
               effect="blur"
@@ -34,7 +34,7 @@ const AboutUs = () => {
               width="360px"
             />
           </div>
-          <div className="absolute -top-20 -right-20">
+          <div className="absolute md:-top-20 -top-24 md:-right-20 right-0">
             <LazyLoadImage
               effect="blur"
               alt=""
@@ -43,7 +43,7 @@ const AboutUs = () => {
               width="196px"
             />
           </div>
-          <div className="absolute bottom-10 left-10">
+          <div className="absolute md:bottom-10 md:left-10 -bottom-32 ">
             <LazyLoadImage
               effect="blur"
               alt=""

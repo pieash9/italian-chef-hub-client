@@ -39,7 +39,9 @@ const Register = () => {
     }
   };
   return (
-    <div className="my-16">
+    
+    <div className="my-16 my-container">
+      
       <div className=" md:w-4/12 mx-auto">
         <h3 className="text-3xl text-gray-600 font-semibold font-josefin-sans text-center">
           Register New Account
@@ -80,9 +82,11 @@ const Register = () => {
           />
           <div className="flex items-center ">
             <input
-              className="form-checkbox h-5 w-5 bg-red-500"
+              className="h-5 w-5 checkbox checkbox-error border-2 border-red-400"
               type="checkbox"
+              required
             />
+            
             <p className="cursor-pointer text-gray-600 ml-2">
               I accept the <span className="text-red-500">Terms of use</span> &{" "}
               <span className="text-red-500">Privacy Policy.</span>{" "}

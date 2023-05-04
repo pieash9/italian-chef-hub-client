@@ -3,8 +3,8 @@ import LazyLoad from "react-lazy-load";
 
 const DiscoverTaste = () => {
   return (
-    <div className="mt-36   ">
-      <LazyLoad height={762}>
+    <div className="my-36   ">
+      <LazyLoad>
         <div className="bg-[url('https://templatemanja.com/tashan/demo/assets/images/cta_bg.jpg')] bg-center bg-cover flex items-center ">
           <div className="mb-10 md:w-1/2 my-container md:ml-20 md:my-20 my-10">
             <h3 className="text-2xl font-Kaushan  text-red-500 mb-6">

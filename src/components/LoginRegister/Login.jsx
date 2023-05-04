@@ -63,7 +63,7 @@ const Login = () => {
   };
 
   return (
-    <div className="my-16">
+    <div className="my-16 my-container">
       <div className=" md:w-4/12 mx-auto">
         <h3 className="text-3xl text-gray-600 font-semibold font-josefin-sans text-center">
           Login To Your Account
@@ -101,17 +101,17 @@ const Login = () => {
         <h5 className="text-2xl font-medium text-gray-600 text-center mb-3">
           Or
         </h5>
-        <div className="flex items-center justify-between">
+        <div className="md:flex items-center justify-between gap-3">
           <button onClick={handleGithubLogin}>
             <img
-              className="h-10"
+              className="h-10 w-screen md:w-full "
               src="https://i.ibb.co/r2N8zZm/image.png"
               alt="github-login"
             />
           </button>
           <button onClick={handleGoogleLogin}>
             <img
-              className="h-12"
+              className="h-12 w-screen md:w-full"
               src="https://i.ibb.co/JKVFVCn/image.png"
               alt="google-login"
             />

@@ -15,7 +15,7 @@ const Banner = () => {
         />
         <div className="absolute inset-0 bg-black opacity-60 "></div>
         <div className="absolute inset-0 flex items-center justify-center text-white">
-          <div className="text-center">
+          <div className="text-center md:mx-0 mx-1">
             <h1 className="text-6xl font-bold mb-4">
               Welcome to <span className="text-red-500">Italian Chef Hub</span>
             </h1>
@@ -45,7 +45,7 @@ const Banner = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50 "></div>
         <div className="absolute inset-0 flex items-center justify-center text-white">
-          <div className="text-center">
+          <div className="text-center md:mx-0 mx-1">
             <h1 className="text-6xl font-bold mb-4">
               Get Your <span className="text-red-500">Food</span>
             </h1>
@@ -74,7 +74,7 @@ const Banner = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50 "></div>
         <div className="absolute inset-0 flex items-center justify-center text-white">
-          <div className="text-center">
+          <div className="text-center md:mx-0 mx-1">
             <h1 className="text-6xl font-bold mb-4">
               Choose & <span className="text-red-500">Enjoy</span>
             </h1>
@@ -103,7 +103,7 @@ const Banner = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50 "></div>
         <div className="absolute inset-0 flex items-center justify-center text-white">
-          <div className="text-center">
+          <div className="text-center md:mx-0 mx-1">
             <h1 className="text-6xl font-bold mb-4">
               Delicious <span className="text-red-500">Food</span>
             </h1>

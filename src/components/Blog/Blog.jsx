@@ -1,10 +1,27 @@
-import React from "react";
+import React, { createRef } from "react";
+
+import Pdf from "react-to-pdf";
+import { BsFiletypePdf } from "react-icons/bs";
 
 const Blog = () => {
+  const ref = React.createRef();
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
   return (
     <div>
-      <div className="my-container mx-auto py-8">
-        <h2 className="text-3xl font-bold mb-4 text-gray-700">Blog Section</h2>
+      <div className="bg-gray-900 text-white py-4 md:px-20 flex items-center justify-between">
+        <h1 className="text-2xl font-bold">Blog Section</h1>
+
+        <Pdf targetRef={ref} filename="blog.pdf">
+        {({ toPdf }) => (
+          <button className="button-primary !py-2 flex items-center " onClick={() => toPdf({ x: 0, y: 0, scale: 1.5, width: {width}, height: {height} })}>
+            Download <BsFiletypePdf className="ml-2 text-xl"/>
+          </button>
+        )}
+      </Pdf>
+      </div>
+      <div ref={ref} className="my-container mx-auto py-8 w-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           <div className="bg-white  p-4 shadow border border-gray-300 rounded-lg">
             <h3 className="text-xl font-semibold mb-2 text-gray-700">
@@ -19,7 +36,7 @@ const Blog = () => {
               data.
             </p>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow border border-gray-300 rounded-lg">
+          <div className="bg-white  p-4 shadow border border-gray-300 rounded-lg">
             <h3 className="text-xl font-semibold mb-2 text-gray-700">
               2. How to validate React props using PropTypes
             </h3>
@@ -35,7 +52,7 @@ const Blog = () => {
               several validators offered by the PropTypes library.
             </p>
           </div>
-          <div className="bg-white rounded-lg p-4 border border-gray-300 rounded-lg">
+          <div className="bg-white  p-4 border border-gray-300 rounded-lg">
             <h3 className="text-xl font-semibold mb-2 text-gray-700">
               3. Tell us the difference between nodejs and express js.
             </h3>
@@ -48,7 +65,7 @@ const Blog = () => {
               online apps.
             </p>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow border border-gray-300 rounded-lg">
+          <div className="bg-white  p-4 shadow border border-gray-300 rounded-lg">
             <h3 className="text-xl font-semibold mb-2 text-gray-700">
               4. What is a custom hook, and why will you create a custom hook?
             </h3>

@@ -22,9 +22,9 @@ const ChefDetails = () => {
       <h3 className="text-3xl font-Kaushan text-center text-red-500 mb-10">
         About Chef
       </h3>
-      <div className="flex gap-10 ">
-        <div className="md:w-3/12">
-          <LazyLoadImage effect="blur" alt=""  src={picture} />
+      <div className="md:flex md:gap-10 ">
+        <div className="md:w-3/12 w-full">
+          <LazyLoadImage className="w-screen" effect="blur" alt=""  src={picture} />
           <h3 className="text-3xl mb-3 mt-5 text-center text-gray-600 font-medium">
             {name}
           </h3>
