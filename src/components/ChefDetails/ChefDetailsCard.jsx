@@ -6,6 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import "@smastrom/react-rating/style.css";
 
+
 const ChefDetailsCard = ({ singleRecipe }) => {
   const { name, ingredients, method, rating } = singleRecipe;
 

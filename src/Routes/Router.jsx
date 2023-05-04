@@ -42,7 +42,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allData/${params.id}`),
+          fetch(`https://italian-chef-hub-server-pieash9.vercel.app/allData/${params.id}`),
       },
       {
         path: "blog",

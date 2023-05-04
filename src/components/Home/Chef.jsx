@@ -5,7 +5,7 @@ import ChefCard from "./ChefCard";
 const Chef = () => {
   const [chefsData, setChefsData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allData")
+    fetch("https://italian-chef-hub-server-pieash9.vercel.app/allData")
       .then((res) => res.json())
       .then((data) => setChefsData(data));
   }, []);

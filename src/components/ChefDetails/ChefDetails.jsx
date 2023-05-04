@@ -3,6 +3,8 @@ import React from "react";
 import { FcLike } from "react-icons/fc";
 import { useLoaderData } from "react-router-dom";
 import ChefDetailsCard from "./ChefDetailsCard";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ChefDetails = () => {
   const chefData = useLoaderData();
@@ -22,7 +24,7 @@ const ChefDetails = () => {
       </h3>
       <div className="flex gap-10 ">
         <div className="md:w-3/12">
-          <img className="w-full" src={picture} alt="" />
+          <LazyLoadImage effect="blur" alt=""  src={picture} />
           <h3 className="text-3xl mb-3 mt-5 text-center text-gray-600 font-medium">
             {name}
           </h3>
@@ -70,15 +72,15 @@ const ChefDetails = () => {
       {/* Recipes details card  */}
 
       <div>
-      <h5 className="text-2xl mb-3 mt-16 text-gray-800 font-medium">
-            Recipe Details
-          </h5>
-          
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
-            {recipesDetails?.map((singleRecipe, id) => (
-              <ChefDetailsCard key={id} singleRecipe={singleRecipe} />
-            ))}
-          </div>
+        <h5 className="text-2xl mb-3 mt-16 text-gray-800 font-medium">
+          Recipe Details
+        </h5>
+
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+          {recipesDetails?.map((singleRecipe, id) => (
+            <ChefDetailsCard key={id} singleRecipe={singleRecipe} />
+          ))}
+        </div>
       </div>
     </div>
   );

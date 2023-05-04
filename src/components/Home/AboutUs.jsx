@@ -1,4 +1,6 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const AboutUs = () => {
   return (
@@ -24,21 +26,30 @@ const AboutUs = () => {
         </div>
         <div className="relative">
           <div className="md:ml-36">
-            <img
-              src="https://templatemanja.com/tashan/demo/assets/images/about_img2.jpg"
+            <LazyLoadImage
+              effect="blur"
               alt=""
+              height="450px"
+              src="https://templatemanja.com/tashan/demo/assets/images/about_img2.jpg"
+              width="360px"
             />
           </div>
           <div className="absolute -top-20 -right-20">
-            <img
-              src="https://templatemanja.com/tashan/demo/assets/images/about_img3.jpg"
+            <LazyLoadImage
+              effect="blur"
               alt=""
+              height="220px"
+              src="https://templatemanja.com/tashan/demo/assets/images/about_img3.jpg"
+              width="196px"
             />
           </div>
           <div className="absolute bottom-10 left-10">
-            <img
-              src="	https://templatemanja.com/tashan/demo/assets/images/about_img4.jpg"
+            <LazyLoadImage
+              effect="blur"
               alt=""
+              height="200px"
+              src="	https://templatemanja.com/tashan/demo/assets/images/about_img4.jpg"
+              width="196px"
             />
           </div>
         </div>
