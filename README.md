@@ -2,7 +2,7 @@
 
 Italian Chef Hub is a website dedicated to Italian cuisine. It is a platform where food enthusiasts can discover authentic Italian recipes, learn about famous Italian chefs, and share their own recipes and cooking experiences with others.
 
-- **Live Site**: [Italian Chef Hub](https://www.italianchefhub.com/)
+- **Live Site**: [Italian Chef Hub](https://dreamy-sunshine-c64edf.netlify.app/)
   
 ## Key Features
 

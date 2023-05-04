@@ -28,8 +28,8 @@ const Login = () => {
 
     loginWithEmail(email, password)
       .then((result) => {
-        navigate(from, { replace: true });
         toast.success("Login Successfully !");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         setError("Your password or email did not match");

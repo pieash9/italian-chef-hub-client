@@ -5,8 +5,6 @@ import { BsFiletypePdf } from "react-icons/bs";
 
 const Blog = () => {
   const ref = React.createRef();
-  const width = window.innerWidth;
-  const height = window.innerHeight;
 
   return (
     <div>
@@ -15,7 +13,7 @@ const Blog = () => {
 
         <Pdf targetRef={ref} filename="blog.pdf">
         {({ toPdf }) => (
-          <button className="button-primary !py-2 flex items-center " onClick={() => toPdf({ x: 0, y: 0, scale: 1.5, width: {width}, height: {height} })}>
+          <button className="button-primary !py-2 flex items-center " onClick={toPdf}>
             Download <BsFiletypePdf className="ml-2 text-xl"/>
           </button>
         )}
